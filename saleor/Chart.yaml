@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for Kubernetes to run Saleor
+name: saleor
+version: 0.1.0
