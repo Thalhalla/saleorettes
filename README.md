@@ -1,6 +1,6 @@
-# Reactionetes
+# Saleorettes
 
-Spin up a Kubernetes stack dedicated to Reaction Commerce PDQ
+Spin up a Kubernetes stack dedicated to Saleor Commerce PDQ
 
 [![Build Status](https://travis-ci.org/joshuacox/reactionetes.svg?branch=master)](https://travis-ci.org/joshuacox/reactionetes)
 [![CircleCI](https://circleci.com/gh/joshuacox/reactionetes/tree/master.svg?style=svg)](https://circleci.com/gh/joshuacox/reactionetes/tree/master)
@@ -14,16 +14,17 @@ helm install \
   --set mongodbReleaseName=massive-mongonetes \
   --set replicaCount=1 \
   --set mongoReplicaCount=3 \
-  --set image.repository=reactioncommerce/reaction \
+  --set image.repository=thalhalla/saleor \
   --set image.tag=latest \
-  ./reactioncommerce
+  ./saleor
 ```
 
 ## Oneliner Autopilot
 
 The oneliner:
+
 ```
-curl -L https://git.io/reactionetes | bash
+curl -L https://raw.githubusercontent.com/Thalhalla/saleorettes/master/bootstrap | bash
 ```
 
 ## Exports
