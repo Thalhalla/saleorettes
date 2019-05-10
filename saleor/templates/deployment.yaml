@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "reactioncommerce.fullname" . }}
+  name: {{ template "saleor.fullname" . }}
   labels:
-    app: {{ template "reactioncommerce.name" . }}
+    app: {{ template "saleor.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "reactioncommerce.name" . }}
+        app: {{ template "saleor.name" . }}
         release: {{ .Release.Name }}
     spec:
       containers:
@@ -27,11 +27,6 @@ spec:
                 configMapKeyRef:
                   name: {{ .Release.Name }}-reaction-config
                   key: reaction.root_url
-            - name: MONGO_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ .Release.Name }}-reaction-config
-                  key: reaction.mongo_url
             - name: REACTION_USER
               valueFrom:
                 configMapKeyRef:
